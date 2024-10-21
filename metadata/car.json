@@ -1,0 +1,35 @@
+{
+    "title": "car",
+    "description": "",
+    "language": "en",
+    "supp_id": "",
+    "created_on": 1729240446,
+    "components": {
+        "embedding_model": {
+            "subclass_name": "OpenAIEmbedding",
+            "dimension": 768,
+            "model": "text-embedding-3-small"
+        },
+        "reranker": {
+            "subclass_name": "CohereReranker",
+            "model": "rerank-english-v3.0"
+        },
+        "auto_context_model": {
+            "subclass_name": "OpenAIChatAPI",
+            "model": "gpt-4o-mini",
+            "temperature": 0.2,
+            "max_tokens": 1000
+        },
+        "vector_db": {
+            "subclass_name": "BasicVectorDB",
+            "kb_id": "car",
+            "storage_directory": "/home/bqc/project/dsRAG",
+            "use_faiss": true
+        },
+        "chunk_db": {
+            "subclass_name": "BasicChunkDB",
+            "kb_id": "car",
+            "storage_directory": "/home/bqc/project/dsRAG"
+        }
+    }
+}
