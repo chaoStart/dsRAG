@@ -200,7 +200,7 @@ for segment_start, segment_end in best_segments:
     segment_text = f"[{document_context}]\n"
     print("什么是segment_text:",segment_text)
     for i in range(segment_start, segment_end):
-        print("什么是chunks[i]和chunk_text:",chunks[i],'\n---\n',chunk_text)
+        print(f"什么是chunks[{i}]和chunk_text:",chunks[i],'\n---\n',chunk_text)
         chunk_text = chunks[i]["chunk_text"]
         segment_text += chunk_text + "\n"
 
